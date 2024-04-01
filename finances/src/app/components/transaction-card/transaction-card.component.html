@@ -1,0 +1,11 @@
+<li>
+  <span>{{
+    transaction.value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    })
+  }}</span>
+  <p>{{ transaction.description }}</p>
+  <p>{{ transaction.type }}</p>
+  <button>Trash</button>
+</li>
