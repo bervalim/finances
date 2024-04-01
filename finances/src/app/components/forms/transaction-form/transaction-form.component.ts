@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TransactionService } from '../../../../services/transaction.service';
 
 @Component({
   selector: 'app-transaction-form',
@@ -10,21 +11,25 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './transaction-form.component.scss',
 })
 export class TransactionFormComponent {
+  constructor(private transactionService: TransactionService) {}
+
   value = new FormControl('');
-  type = new FormControl('entrada');
+  type = new FormControl('Entrada');
   description = new FormControl('');
 
   submitTrasactionForm(event: Event) {
     event.preventDefault();
+
     const data = {
-      value: this.value.value,
-      type: this.type.value,
-      description: this.description.value,
+      value: Number(this.value.value as string),
+      type: this.type.value as string,
+      description: this.description.value as string,
     };
-    console.log(data);
+
+    this.transactionService.addTransactionToList(data);
 
     this.value.setValue('');
-    this.type.setValue('entrada');
+    this.type.setValue('Entrada');
     this.description.setValue('');
   }
 }
