@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ITransaction } from '../../../interfaces/transaction.interface';
+import { TransactionService } from '../../../services/transaction.service';
 
 @Component({
   selector: 'app-transaction-card',
@@ -9,5 +10,11 @@ import { ITransaction } from '../../../interfaces/transaction.interface';
   styleUrl: './transaction-card.component.scss',
 })
 export class TransactionCardComponent {
+  constructor(private transactioService: TransactionService) {}
+
   @Input() transaction!: ITransaction;
+
+  handleRemoveTransaction() {
+    this.transactioService.removeTransactionFromList(this.transaction.id);
+  }
 }
