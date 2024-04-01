@@ -1,10 +1,10 @@
 <li>
-  <span>{{
-    transaction.value.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    })
+  <span *ngIf="transaction.type === 'Entrada'">{{
+    convertTransactionToBRL()
   }}</span>
+  <span *ngIf="transaction.type === 'Saída'"
+    >-{{ convertTransactionToBRL() }}</span
+  >
   <p>{{ transaction.description }}</p>
   <p>{{ transaction.type }}</p>
   <button (click)="handleRemoveTransaction()">Trash</button>

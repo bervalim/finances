@@ -1,7 +1,7 @@
 export interface ITransaction {
   id: string;
   value: number;
-  type: string;
+  type: 'Entrada' | 'Saída';
   description: string;
 }
 

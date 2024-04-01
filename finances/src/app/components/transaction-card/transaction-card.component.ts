@@ -1,20 +1,32 @@
 import { Component, Input } from '@angular/core';
 import { ITransaction } from '../../../interfaces/transaction.interface';
 import { TransactionService } from '../../../services/transaction.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-transaction-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './transaction-card.component.html',
   styleUrl: './transaction-card.component.scss',
 })
 export class TransactionCardComponent {
-  constructor(private transactioService: TransactionService) {}
+  constructor(private transactionService: TransactionService) {}
 
   @Input() transaction!: ITransaction;
 
+  convertTransactionToBRL() {
+    if (!isNaN(this.transaction.value)) {
+      return this.transaction.value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      });
+    } else {
+      return '0,00';
+    }
+  }
+
   handleRemoveTransaction() {
-    this.transactioService.removeTransactionFromList(this.transaction.id);
+    this.transactionService.removeTransactionFromList(this.transaction.id);
   }
 }

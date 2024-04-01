@@ -22,7 +22,7 @@ export class TransactionFormComponent {
 
     const data = {
       value: Number(this.value.value as string),
-      type: this.type.value as string,
+      type: this.type.value as 'Entrada' | 'Saída',
       description: this.description.value as string,
     };
 
