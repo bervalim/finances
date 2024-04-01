@@ -1,7 +1,9 @@
 <main>
   <section>
     <app-transaction-form></app-transaction-form>
-    <app-transaction-sum></app-transaction-sum>
+    <div *ngIf="transactionList.length > 0">
+      <app-transaction-sum></app-transaction-sum>
+    </div>
     <div>
       <ul *ngIf="transactionList.length > 0">
         <app-transaction-card

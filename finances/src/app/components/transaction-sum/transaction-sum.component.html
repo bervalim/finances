@@ -2,7 +2,9 @@
   <div>
     <div>
       <h3>Total:</h3>
-      <span>Sum Value</span>
+      <span>{{
+        total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+      }}</span>
     </div>
   </div>
 </div>
