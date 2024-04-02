@@ -1,24 +1,24 @@
 <div>
   <form (submit)="submitTrasactionForm($event)">
     <div>
-      <h2>Cadastre transação</h2>
+      <h2 class="title">Cadastre transação</h2>
       <a routerLink="/" routerLinkActive="active"
-        ><mat-icon style="color: black">arrow_back</mat-icon></a
+        ><mat-icon class="arrow">arrow_back</mat-icon></a
       >
     </div>
-    <label for="value">Valor</label>
+    <label class="paragraph" for="value">Valor</label>
     <input id="value" type="number" placeholder="R$" [formControl]="value" />
-    <label for="type">Tipo</label>
+    <label class="paragraph" for="type">Tipo</label>
     <select name="type" id="type" [formControl]="type">
       <option value="Entrada">Entrada</option>
       <option value="Saída">Saída</option>
     </select>
-    <label for="description">Descrição:</label>
+    <label class="paragraph" for="description">Descrição:</label>
     <textarea
       id="description"
       placeholder="Descrição"
       [formControl]="description"
     ></textarea>
-    <button type="submit">Cadastro</button>
+    <button class="btn md" type="submit">Cadastro</button>
   </form>
 </div>

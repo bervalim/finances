@@ -1,12 +1,16 @@
 <li>
-  <span *ngIf="transaction.type === 'Entrada'">{{
+  <span class="paragraph profit" *ngIf="transaction.type === 'Entrada'">{{
     convertTransactionToBRL()
   }}</span>
-  <span *ngIf="transaction.type === 'Saída'"
+  <span class="paragraph expenses" *ngIf="transaction.type === 'Saída'"
     >-{{ convertTransactionToBRL() }}</span
   >
-  <p>{{ transaction.description }}</p>
-  <p>{{ transaction.type }}</p>
+  <p class="paragraph type">{{ transaction.description }}</p>
+  <p class="paragraph type">{{ transaction.type }}</p>
 
-  <button><mat-icon (click)="handleRemoveTransaction()">delete</mat-icon></button>
+  <button>
+    <mat-icon class="trash" (click)="handleRemoveTransaction()"
+      >delete</mat-icon
+    >
+  </button>
 </li>
