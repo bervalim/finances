@@ -1,0 +1,21 @@
+<li class="transaction_card">
+  <div class="card_flexbox">
+    <div class="flex_left">
+      <span class="paragraph profit" *ngIf="transaction.type === 'Entrada'">{{
+        convertTransactionToBRL()
+      }}</span>
+      <span class="paragraph expenses" *ngIf="transaction.type === 'Saída'"
+        >-{{ convertTransactionToBRL() }}</span
+      >
+      <p class="paragraph type">{{ transaction.description }}</p>
+    </div>
+    <div class="flex_right">
+      <p class="paragraph type">{{ transaction.type }}</p>
+      <button>
+        <mat-icon class="trash" (click)="handleRemoveTransaction()"
+          >delete</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+</li>

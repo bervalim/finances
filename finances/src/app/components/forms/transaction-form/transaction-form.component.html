@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form_box" (submit)="submitTrasactionForm($event)">
+    <div class="flexbox">
+      <h2 class="title">Cadastre transação</h2>
+      <a routerLink="/" routerLinkActive="active"
+        ><mat-icon class="arrow">arrow_back</mat-icon></a
+      >
+    </div>
+    <div class="flex_input">
+      <label class="paragraph" for="value">Valor</label>
+      <div class="input">
+        <input
+          required
+          id="value"
+          type="number"
+          placeholder="R$"
+          [formControl]="value"
+        />
+      </div>
+      <label class="paragraph" for="type">Tipo</label>
+      <div class="select">
+        <select name="type" id="type" [formControl]="type" required>
+          <option value="Entrada">Entrada</option>
+          <option value="Saída">Saída</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label class="paragraph" for="description">Descrição:</label>
+      <div class="textarea">
+        <textarea
+          required
+          id="description"
+          placeholder="Descrição"
+          [formControl]="description"
+        ></textarea>
+      </div>
+    </div>
+    <button class="btn md" type="submit">Cadastro</button>
+  </form>
+</div>
