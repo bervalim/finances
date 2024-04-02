@@ -4,16 +4,18 @@
     <div *ngIf="transactionList.length > 0">
       <app-transaction-sum></app-transaction-sum>
     </div>
-    <div>
-      <ul *ngIf="transactionList.length > 0">
+    <div class="container">
+      <ul class="transaction_list" *ngIf="transactionList.length > 0">
         <app-transaction-card
           *ngFor="let transaction of transactionList"
           [transaction]="transaction"
         ></app-transaction-card>
       </ul>
-      <div *ngIf="transactionList.length === 0">
-        <h3>Resumo financeiro</h3>
-        <p>Você ainda não possuí nenhum lançamento</p>
+      <div class="container" *ngIf="transactionList.length === 0">
+        <div class="no_transactions">
+          <h3 class="title md">Resumo financeiro</h3>
+          <p class="paragraph type">Você ainda não possuí nenhum lançamento</p>
+        </div>
       </div>
     </div>
   </section>

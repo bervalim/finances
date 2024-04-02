@@ -1,0 +1,13 @@
+:root {
+  --font-primary: "Montserrat", sans-serif;
+  --color-blue-1: #aecfff;
+  --color-blue-2: #428dff;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #e9ecef;
+  --color-red: #ff8989;
+}
+
+body {
+  background-color: var(--color-blue-1);
+}

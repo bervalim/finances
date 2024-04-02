@@ -1,0 +1,40 @@
+.title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--color-black);
+  font-size: clamp(1.25rem, 3vw, 1.5625rem);
+
+  &.md {
+    font-size: clamp(17px, 4vw, 20px);
+  }
+}
+
+.paragraph {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--color-black);
+
+  &.type {
+    font-weight: 400;
+  }
+
+  &.profit {
+    font-size: 0.875rem;
+    color: var(--color-blue-2);
+  }
+
+  &.expenses {
+    font-size: 0.875rem;
+    color: var(--color-red);
+  }
+}
+
+.arrow {
+  color: var(--color-blue-2);
+  font-size: 29px;
+}
+
+.trash {
+  color: var(--color-blue-2);
+}
