@@ -2,11 +2,13 @@ import { Component, Input } from '@angular/core';
 import { ITransaction } from '../../../interfaces/transaction.interface';
 import { TransactionService } from '../../../services/transaction.service';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCommonModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-transaction-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule, MatCommonModule],
   templateUrl: './transaction-card.component.html',
   styleUrl: './transaction-card.component.scss',
 })

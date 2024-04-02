@@ -2,11 +2,19 @@ import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TransactionService } from '../../../../services/transaction.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCommonModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-transaction-form',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatCommonModule,
+  ],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.scss',
 })

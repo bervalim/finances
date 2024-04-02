@@ -7,5 +7,6 @@
   >
   <p>{{ transaction.description }}</p>
   <p>{{ transaction.type }}</p>
-  <button (click)="handleRemoveTransaction()">Trash</button>
+
+  <button><mat-icon (click)="handleRemoveTransaction()">delete</mat-icon></button>
 </li>

@@ -2,7 +2,9 @@
   <form (submit)="submitTrasactionForm($event)">
     <div>
       <h2>Cadastre transação</h2>
-      <a routerLink="/" routerLinkActive="active">Arrow</a>
+      <a routerLink="/" routerLinkActive="active"
+        ><mat-icon style="color: black">arrow_back</mat-icon></a
+      >
     </div>
     <label for="value">Valor</label>
     <input id="value" type="number" placeholder="R$" [formControl]="value" />
