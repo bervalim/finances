@@ -2,7 +2,7 @@
   font-family: var(--font-primary);
   font-weight: 700;
   color: var(--color-black);
-  font-size: clamp(1.25rem, 4vw, 1.5625rem);
+  font-size: clamp(1.25rem, 3vw, 1.5625rem);
 
   &.md {
     font-size: clamp(17px, 4vw, 20px);
