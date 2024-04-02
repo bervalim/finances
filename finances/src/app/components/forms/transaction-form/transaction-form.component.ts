@@ -4,7 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TransactionService } from '../../../../services/transaction.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCommonModule } from '@angular/material/core';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-transaction-form',
@@ -15,13 +15,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatIconModule,
     MatCommonModule,
-    MatSnackBarModule,
   ],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.scss',
 })
 export class TransactionFormComponent {
-  constructor(private transactionService: TransactionService) {}
+  constructor(
+    private transactionService: TransactionService,
+    private toastr: ToastrService
+  ) {}
 
   value = new FormControl('');
   type = new FormControl('Entrada');
@@ -43,8 +45,9 @@ export class TransactionFormComponent {
       this.type.setValue('Entrada');
       this.description.setValue('');
     } else {
-      alert(
-        'É necessário preencher todos os dados para realizar uma transação'
+      this.toastr.warning(
+        'É preciso preencher os dados para realizar uma transação!',
+        'Atenção'
       );
     }
   }
