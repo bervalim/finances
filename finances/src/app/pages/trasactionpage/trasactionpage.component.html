@@ -12,8 +12,10 @@
         ></app-transaction-card>
       </ul>
       <div class="container" *ngIf="transactionList.length === 0">
-        <h3 class="title md">Resumo financeiro</h3>
-        <p class="paragraph type">Você ainda não possuí nenhum lançamento</p>
+        <div class="no_transactions">
+          <h3 class="title md">Resumo financeiro</h3>
+          <p class="paragraph type">Você ainda não possuí nenhum lançamento</p>
+        </div>
       </div>
     </div>
   </section>

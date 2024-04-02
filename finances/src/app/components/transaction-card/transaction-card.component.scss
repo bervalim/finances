@@ -6,14 +6,16 @@
 
   .card_flexbox {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .flex_left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 8px;
   }
 
@@ -23,5 +25,26 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+  }
+
+  @media (min-width: 350px) {
+    .card_flexbox {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .flex_left {
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    // .flex_right {
+    //   display: flex;
+    //   flex-direction: row;
+    //   align-items: center;
+    //   justify-content: center;
+    //   gap: 8px;
+    // }
   }
 }
