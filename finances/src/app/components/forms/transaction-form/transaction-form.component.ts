@@ -29,10 +29,17 @@ export class TransactionFormComponent {
   type = new FormControl('Entrada');
   description = new FormControl('');
 
-  openToast() {
+  openWarningToast() {
     this.toastr.warning(
       'É preciso preencher os dados para realizar uma transação!',
       'Atenção'
+    );
+  }
+
+  openSucessToast() {
+    this.toastr.success(
+      'Transação financeira realizada com sucesso!',
+      'Sucesso'
     );
   }
 
@@ -47,11 +54,12 @@ export class TransactionFormComponent {
       };
 
       this.transactionService.addTransactionToList(data);
+      this.openSucessToast();
       this.value.setValue('');
       this.type.setValue('Entrada');
       this.description.setValue('');
     } else {
-      this.openToast();
+      this.openWarningToast();
     }
   }
 }

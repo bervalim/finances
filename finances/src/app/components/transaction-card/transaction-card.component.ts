@@ -4,6 +4,7 @@ import { TransactionService } from '../../../services/transaction.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCommonModule } from '@angular/material/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-transaction-card',
@@ -13,7 +14,10 @@ import { MatCommonModule } from '@angular/material/core';
   styleUrl: './transaction-card.component.scss',
 })
 export class TransactionCardComponent {
-  constructor(private transactionService: TransactionService) {}
+  constructor(
+    private transactionService: TransactionService,
+    private toastr: ToastrService
+  ) {}
 
   @Input() transaction!: ITransaction;
 
@@ -30,5 +34,9 @@ export class TransactionCardComponent {
 
   handleRemoveTransaction() {
     this.transactionService.removeTransactionFromList(this.transaction.id);
+    this.toastr.success(
+      'Transação financeira excluída com sucesso!',
+      'Sucesso'
+    );
   }
 }

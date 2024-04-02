@@ -8,7 +8,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideToastr({
-      timeOut: 1700,
+      timeOut: 1000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       closeButton: true,
