@@ -1,0 +1,27 @@
+.transaction_card {
+  width: 100%;
+  max-width: 820px;
+  padding: 25px;
+  background-color: var(--color-white);
+
+  .card_flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flex_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .flex_right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+}

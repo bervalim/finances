@@ -10,6 +10,7 @@
       <label class="paragraph" for="value">Valor</label>
       <div class="input">
         <input
+          required
           id="value"
           type="number"
           placeholder="R$"
@@ -18,7 +19,7 @@
       </div>
       <label class="paragraph" for="type">Tipo</label>
       <div class="select">
-        <select name="type" id="type" [formControl]="type">
+        <select name="type" id="type" [formControl]="type" required>
           <option value="Entrada">Entrada</option>
           <option value="Saída">Saída</option>
         </select>
@@ -28,6 +29,7 @@
       <label class="paragraph" for="description">Descrição:</label>
       <div class="textarea">
         <textarea
+          required
           id="description"
           placeholder="Descrição"
           [formControl]="description"

@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TransactionService } from '../../../../services/transaction.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCommonModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-transaction-form',
@@ -14,6 +15,7 @@ import { MatCommonModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatIconModule,
     MatCommonModule,
+    MatSnackBarModule,
   ],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.scss',
@@ -28,16 +30,22 @@ export class TransactionFormComponent {
   submitTrasactionForm(event: Event) {
     event.preventDefault();
 
-    const data = {
-      value: Number(this.value.value as string),
-      type: this.type.value as 'Entrada' | 'Saída',
-      description: this.description.value as string,
-    };
+    if (this.value.value !== '' && this.description.value !== '') {
+      const data = {
+        value: Number(this.value.value as string),
+        type: this.type.value as 'Entrada' | 'Saída',
+        description: this.description.value as string,
+      };
 
-    this.transactionService.addTransactionToList(data);
+      this.transactionService.addTransactionToList(data);
 
-    this.value.setValue('');
-    this.type.setValue('Entrada');
-    this.description.setValue('');
+      this.value.setValue('');
+      this.type.setValue('Entrada');
+      this.description.setValue('');
+    } else {
+      alert(
+        'É necessário preencher todos os dados para realizar uma transação'
+      );
+    }
   }
 }
