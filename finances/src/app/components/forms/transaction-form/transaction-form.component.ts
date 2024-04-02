@@ -29,6 +29,13 @@ export class TransactionFormComponent {
   type = new FormControl('Entrada');
   description = new FormControl('');
 
+  openToast() {
+    this.toastr.warning(
+      'É preciso preencher os dados para realizar uma transação!',
+      'Atenção'
+    );
+  }
+
   submitTrasactionForm(event: Event) {
     event.preventDefault();
 
@@ -40,15 +47,11 @@ export class TransactionFormComponent {
       };
 
       this.transactionService.addTransactionToList(data);
-
       this.value.setValue('');
       this.type.setValue('Entrada');
       this.description.setValue('');
     } else {
-      this.toastr.warning(
-        'É preciso preencher os dados para realizar uma transação!',
-        'Atenção'
-      );
+      this.openToast();
     }
   }
 }
