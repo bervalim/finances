@@ -7,7 +7,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class TransactionService {
   readonly transactionList = signal<ITransaction[]>([]);
-
+  // test
   readonly total = computed(() =>
     this.transactionList().reduce((prevValue, transaction) => {
       if (transaction.type === 'Entrada') {
